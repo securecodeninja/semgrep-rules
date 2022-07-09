@@ -1,7 +1,6 @@
 id: stacktrace-disclosure
 patterns:
-  - pattern: |
-      $APP.UseDeveloperExceptionPage();
+  - pattern: $APP.UseDeveloperExceptionPage();
   - pattern-not-inside: if ($ENV.IsDevelopment(...)) { ... $APP.UseDeveloperExceptionPage(); ... }
 message: Stacktrace information is displayed in a non-Development environment.
   Accidentally disclosing sensitive stack trace information in a production
